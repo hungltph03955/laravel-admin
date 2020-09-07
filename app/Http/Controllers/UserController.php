@@ -15,64 +15,59 @@ class UserController extends Controller
 {
 
     /**
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
-     */
+     * @OA\GET(path="/users",
+     *     @OA\Response(response="200",
+     *          description = "User Collection"
+     *     )
+     * )
+     * */
+
     public function index()
     {
+        \Gate::authorize('view', 'users');
         $users = User::paginate();
         return UserResource::collection($users);
     }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
     public function show($id)
     {
+        \Gate::authorize('view', 'users');
         $user = User::find($id);
         return new UserResource($user);
     }
 
-    /**
-     * @param UserCreateRequest $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
-     */
     public function store(UserCreateRequest $request)
     {
+        \Gate::authorize('edit', 'users');
         $user = User::create($request->only('first_name', 'last_name', 'email', 'role_id') + [
                 'password' => Hash::make($request->input('password')),
             ]);
         return response(new UserResource($user), Response::HTTP_CREATED);
     }
 
-    /**
-     * @param UserUpdateRequest $request
-     * @param $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
-     */
     public function update(UserUpdateRequest $request, $id)
     {
+        \Gate::authorize('edit', 'users');
         $user = User::find($id);
         $user->update($request->only('first_name', 'last_name', 'email', 'role_id'));
         return response(new UserResource($user), Response::HTTP_ACCEPTED);
     }
 
-    /**
-     * @param $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
-     */
     public function destroy($id)
     {
+        \Gate::authorize('edit', 'users');
         User::destroy($id);
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
-    /**
-     * @return UserResource
-     */
     public function user()
     {
-        return new UserResource(\Auth::user());
+        $user = \Auth::user();
+        return (new UserResource($user))->additional([
+            'data' => [
+                'permissions' => $user->permissions()
+            ]
+        ]);
     }
 
     public function updateInfo(Request $request)
