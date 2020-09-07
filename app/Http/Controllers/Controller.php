@@ -26,13 +26,11 @@ class Controller extends BaseController
      *     description="Admin API Server"
      * )
      *
-     * @A\SecurityScheme(
+     * @OA\SecurityScheme(
      *     securityScheme="bearerAuth",
      *     type="http",
      *     scheme="bearer"
      * )
-     *
-     *
      */
 
 }

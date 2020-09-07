@@ -1,0 +1,1231 @@
+{
+	"info": {
+		"_postman_id": "afa04846-3432-4be2-afc6-9ff171337096",
+		"name": "RestfulApi-docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users?page=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/users/2002",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"2002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "hung 4",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hung 1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hungAdmin1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "3",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "first_name",
+									"value": "hung lms",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "hung 1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hungAdmin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/2002",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"2002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/2001",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"2001"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/roles/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Custom\",\n    \"permissions\": [1,2,5,6]\n}",
+							"options": {
+								"formdata": {},
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Custom\",\n    \"permissions\": [1,2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								},
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/roles/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/roles/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"roles",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products?page=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://localhost:8000/images/obzoph3mdN.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "product test 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://localhost:8000/images/obzoph3mdN.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/3006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"3006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/3006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"3006"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders?page=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://localhost:8000/images/obzoph3mdN.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "product test 3",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "product test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "http://localhost:8000/images/obzoph3mdN.jpeg",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/3006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"3006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/3006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"3006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "export CSV",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/export",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"export"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authen",
+			"item": [
+				{
+					"name": "info User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authen_token_api_login}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8258d41a-2e19-40e4-a1bc-df089f6054dd",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"authen_token_api_login\", data.token)",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "zrice@example.com",
+							"description": "viewer",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teresa.monahan@example.org",
+							"description": "admin",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mccullough.horacio@example.net",
+							"description": "editor",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "first_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "password_confirm",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/images/AhRicp0DRJ.jpeg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"images",
+						"AhRicp0DRJ.jpeg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload image",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authen_token_api_login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/mac/Documents/anh_nen/26b8c231754594ad20e92447891ae696.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/upload",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chart",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authen_token_api_login}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWUzY2ZhOWRkN2ZkZmNkMjU5ZWIyMWYzYmNmOWIxODRhNDMzNmNkNGRmNTllODEwMjZhYjUxZmQ5YmQ5NDMzYTRmNGMxOGEwM2RlMTdkZWYiLCJpYXQiOjE1OTkyMDM1NTksIm5iZiI6MTU5OTIwMzU1OSwiZXhwIjoxNjMwNzM5NTU5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jo1SZxE7FKuje-sOd6Yo23kbDSTZrxpQI4mSvMAb-PWA2rXg-iQtpi-ZwMXafWLsg2PESpGSrjAftsyOqzFR76_ch32LfgU2nTL2hsC_3jwN8NkwymU9nOBa_cUKboTVFkqrePmJFmsuNkGN0kYyy8ojNmWnfks-bhGNhX9IwgZE-lr-7qhlE16XkpRSEO557gJXYk5cPxwGhlOoL3pfg2S5_P_HY74ejKdUXUlxWMDc8xaeWFwdrM6bDFqDoZcehTE4FFOiTFA3HEFajVd5vJK0LeU5oFowEfl21MPGeqi6NECAXqjsa_l7Iv1OPIbjUosxLRF1QsfxCbIVX1vPTiMpErre99pa-ZoPGCmSIIj2HqjkHxYq1RbCUTkUbJRDsoWPuNmw3v_umCGdyONq8M8bCdy-GmlBPMTex2Ng99nNxYq2QDIr9iWd4f_JlJDMhqLVxul3UQz7JvDTc11ezq7CdbxyR42sMwOnxUZDVcUY5LRMJO5337wGaNXl27b7MTGrmiou3esgZuJ25MKlqYf7e2b6ZYyjESAw7Wh38zjJdyYNQu2_ZKRh_SNblBbu_XY41AN4tBxmvvRmZ2Bne6m07FPtGwuAIBMxrUA3ECjlfHFm_ZCr_Vx_ZDcIc9K_3sieE3HZpGAhr3rdOevkLpky4MLLCtnXJYPm79pnPTU"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/chart",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"chart"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
